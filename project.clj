@@ -1,4 +1,4 @@
-(defproject lein-bom "0.2.0-SNAPSHOT"
+(defproject lein-bom "0.2.0-atlassian-1-SNAPSHOT"
   :description "A leiningen plugin that provides support for importing maven BOMs"
   :url "https://github.com/tsachev/lein-bom"
   :license {:name "Eclipse Public License"
