@@ -9,7 +9,7 @@ A Leiningen plugin that provides support for importing Maven "Bill Of Materials"
 
 ## Install
 
-Put `[lein-bom "0.2.0-SNAPSHOT"]` into the `:plugins` vector of your `project.clj`.
+Put `[lein-bom "0.2.0-atlassian-1"]` into the `:plugins` vector of your `project.clj`.
 
 ## Usage
 
@@ -24,6 +24,15 @@ To see actual managed dependencies, run:
 ```
 $ lein bom
 ```
+
+## Release from local
+Since lein release doesn't work for non-semver version so our fork needs special releasing. There are two steps:
+* Manually remove `-SNAPSHOT` and then build the uberjar: ```lein uberjar```
+* Deploy the jar to packages.atlassian.com: 
+```
+mvn deploy:deploy-file -DgroupId=lein-bom -DartifactId=lein-bom -DrepositoryId=atlassian-3rdparty -Durl=https://packages.atlassian.com/maven/3rdparty -Dfile=lein-bom-0.2.0-atlassian-2.jar -Dversion=0.2.0-atlassian-2
+```
+
 
 ## License
 
